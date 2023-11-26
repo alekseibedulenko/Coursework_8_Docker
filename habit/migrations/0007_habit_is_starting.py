@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('habit', '0006_alter_habit_reward'),
+        ("habit", "0006_alter_habit_reward"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='habit',
-            name='is_starting',
+            model_name="habit",
+            name="is_starting",
             field=models.BooleanField(default=False),
         ),
     ]

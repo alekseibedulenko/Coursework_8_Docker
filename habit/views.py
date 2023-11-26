@@ -2,6 +2,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 
 from permissions import IsOwnerOrReadOnly
+
 from .models import Habit
 from .paginations import HabitPagination
 from .serializers import HabitSerializer
@@ -11,6 +12,7 @@ class HabitListCreateView(generics.ListCreateAPIView):
     """
     Представление для создания и просмотра списка привычек пользователя.
     """
+
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     pagination_class = HabitPagination
@@ -28,6 +30,7 @@ class HabitDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     Представление для просмотра, обновления и удаления привычки.
     """
+
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]

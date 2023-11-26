@@ -6,7 +6,7 @@ from users.models import User
 
 @pytest.fixture
 def user():
-    return User.objects.create(email='testuser@example.com', password='testpassword')
+    return User.objects.create(email="testuser@example.com", password="testpassword")
 
 
 @pytest.fixture
@@ -24,5 +24,5 @@ def habit(user):
         estimated_time=60,
         is_public=True,
         is_starting=False,
-        notification="telegram"
+        notification="telegram",
     )

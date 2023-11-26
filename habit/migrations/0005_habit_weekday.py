@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('habit', '0004_habit_date_of_creation_habit_notification_time_and_more'),
+        ("habit", "0004_habit_date_of_creation_habit_notification_time_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='habit',
-            name='weekday',
-            field=models.CharField(choices=[('today', 'Сегодня'), ('tomorrow', 'Завтра')], default='today', help_text='Старт выполнения привычки.', max_length=20),
+            model_name="habit",
+            name="weekday",
+            field=models.CharField(
+                choices=[("today", "Сегодня"), ("tomorrow", "Завтра")],
+                default="today",
+                help_text="Старт выполнения привычки.",
+                max_length=20,
+            ),
         ),
     ]

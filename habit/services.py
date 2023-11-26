@@ -9,9 +9,9 @@ def _check_starting(habit, current_day):
     :param current_day: Текущий день
     """
     if not habit.is_starting:
-        if habit.weekday == 'today':
+        if habit.weekday == "today":
             habit.is_starting = True
-        elif habit.weekday == 'tomorrow' and current_day == habit.date_of_start.day + 1:
+        elif habit.weekday == "tomorrow" and current_day == habit.date_of_start.day + 1:
             habit.is_starting = True
         habit.save()
 
@@ -22,7 +22,7 @@ def _check_frequency_weekly(habit):
 
     :param habit: Привычка, для которой обновляется дата начала
     """
-    if habit.frequency == 'weekly':
+    if habit.frequency == "weekly":
         habit.date_of_start += timedelta(days=7)
     else:
         habit.date_of_start += timedelta(days=1)
@@ -38,13 +38,13 @@ def _get_mailing_time(habit):
     """
     mailing_date = datetime.combine(habit.date_of_start, habit.time)
 
-    if habit.notification_time == 'fifteen':
+    if habit.notification_time == "fifteen":
         mailing_date -= timedelta(minutes=15)
-    elif habit.notification_time == 'thirty':
+    elif habit.notification_time == "thirty":
         mailing_date -= timedelta(minutes=30)
-    elif habit.notification_time == 'hour':
+    elif habit.notification_time == "hour":
         mailing_date -= timedelta(hours=1)
-    elif habit.notification_time == 'two_hours':
+    elif habit.notification_time == "two_hours":
         mailing_date -= timedelta(hours=2)
     else:
         mailing_date -= timedelta(days=1)

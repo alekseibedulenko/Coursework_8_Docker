@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('habit', '0002_alter_habit_frequency'),
+        ("habit", "0002_alter_habit_frequency"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='habit',
-            name='frequency',
-            field=models.CharField(choices=[('daily', 'Ежедневная'), ('weekly', 'Еженедельная')], default='daily', help_text='Периодичность выполнения привычки для напоминания в днях.', max_length=255),
+            model_name="habit",
+            name="frequency",
+            field=models.CharField(
+                choices=[("daily", "Ежедневная"), ("weekly", "Еженедельная")],
+                default="daily",
+                help_text="Периодичность выполнения привычки для напоминания в днях.",
+                max_length=255,
+            ),
         ),
     ]

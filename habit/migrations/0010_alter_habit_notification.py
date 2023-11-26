@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('habit', '0009_habit_notification'),
+        ("habit", "0009_habit_notification"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='habit',
-            name='notification',
-            field=models.CharField(choices=[('telegram', 'Телеграм'), ('email', 'Почта')], default='telegram', help_text='Тип оповощения telegram/email.', max_length=20),
+            model_name="habit",
+            name="notification",
+            field=models.CharField(
+                choices=[("telegram", "Телеграм"), ("email", "Почта")],
+                default="telegram",
+                help_text="Тип оповощения telegram/email.",
+                max_length=20,
+            ),
         ),
     ]

@@ -5,4 +5,5 @@ class HabitPagination(PageNumberPagination):
     """
     Класс пагинации для списка привычек.
     """
+
     page_size = 5
