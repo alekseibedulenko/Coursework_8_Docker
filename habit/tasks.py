@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 
+import pytz
 import requests
 from celery import shared_task
 from django.conf import settings
@@ -17,9 +18,10 @@ def send_message():
 
     Получает текущее время и просматривает все привычки для определения, следует ли отправлять уведомление.
     """
+    tz = pytz.timezone('Europe/Moscow')
     # Получаем текущее время
-    current_time = datetime.now().time()
-    current_day = datetime.now().day
+    current_time = datetime.now(tz).time()
+    current_day = datetime.now(tz).day
 
     # Получаем все привычки
     habits = Habit.objects.all()
